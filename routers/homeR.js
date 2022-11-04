@@ -5,6 +5,7 @@ const voterSchema = require('../models/signupSchema')
 const path = require('path');
 const { homedir } = require('os');
 const adminSchema = require('../models/adminSchema')
+const partySchema = require('../models/partySchema')
 
 
 Router.get('/', (err, res) => {
@@ -102,5 +103,36 @@ Router.post('/signin', (req, res) => {
 
 
 })
+
+Router.get('/admin', (err, res) => {
+    res.render('admin')
+})
+
+Router.post('/addparty', (req, res) => {
+
+    const {
+        name,
+        desciption
+    } = req.body;
+    
+    const party = new partySchema({
+        name,
+        desciption
+        })
+        
+    party.save()
+            .then(() => {
+                res.render('admin.ejs');
+            })
+            .catch((error) => {
+                res.send(error);
+            })
+    }
+    
+
+)
+
+
+
 
 module.exports = Router;
