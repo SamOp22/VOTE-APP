@@ -11,7 +11,7 @@ const partySchema = require('../models/partySchema')
 Router.get('/', (err, res) => {
     res.render('signup', { title: 'Fill', password: '' })
 })
- 
+
 
 Router.post('/signup', (req, res) => {
 
@@ -114,23 +114,32 @@ Router.post('/addparty', (req, res) => {
         name,
         desciption
     } = req.body;
-    
+
     const party = new partySchema({
         name,
         desciption
-        })
-        
+    })
+
     party.save()
-            .then(() => {
-                res.render('admin.ejs');
-            })
-            .catch((error) => {
-                res.send(error);
-            })
-    }
-    
+        .then(() => {
+            res.render('admin.ejs');
+        })
+        .catch((error) => {
+            res.send(error);
+        })
+}
+
 
 )
+
+
+Router.get('/votercandidatelist', (req, res) => {
+    partySchema.find({}, function (err,parties) {
+        res.render('votercandidatelist',{
+            partiesList: parties 
+        })
+    })
+})
 
 
 

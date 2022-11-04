@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/vcl.css">
 </head>
 
 <body>
@@ -76,50 +76,14 @@
         </div>
 
     </div>
-    <div class="parag">
-        <p id="para"></p>
-        <p id="profilee">Name: <br> Aadhar No: <br> Phone: <br> voting status: <br> </p>
-        <p id="instrus">1.Only 1 vote per Candidate <br> 2.Enter 1 valid Aadhar number</p>
-        <p id="candi"> <br> 1.BJP<img id="bjp" onclick="document.getElementById('para').innerHTML = ('successfully voted')" height="50px" src="bjp.png" alt=""> <br> 2.Congress <img height="50px"
-                src="congress.png" onclick="document.getElementById('para').innerHTML = ('successfully voted')" alt=""></p>
-        <p id="voti">
-        <form id="foee">
-            <label>Aadhar No</label>
-            <input type="number" placeholder="" /><br>
-            <label>Account id</label>
-            <input type="text" placeholder="" />
-            <br>
-            
-            <input
-                onclick=" document.getElementById('para').innerHTML = ('select candidate') + document.getElementById('candi').innerHTML;"
-                type="button" value="Submit" />
-            
-            </a>
-        </form>
-        </p>
+    <div class="party">
+        <h1>Candidates</h1>
+        <%partiesList.forEach(party => {%>
+        <h1>Name: <%= party.name %> </h1>
+        <p>Description: <%= party.desciption %> </p>
+        <%})%> 
+        
     </div>
-
-
-    <script>
-        function instru() {
-
-            document.getElementById('para').innerHTML = document.getElementById('instrus').innerHTML;
-        }
-
-        function prof() {
-            document.getElementById('para').innerHTML = document.getElementById('profilee').innerHTML;
-        }
-
-        function cand() {
-            
-        }
-
-        function votin() {
-            document.getElementById('para').innerHTML = document.getElementById('foee').innerHTML;
-        }
-
-
-    </script>
 </body>
 
 </html>
