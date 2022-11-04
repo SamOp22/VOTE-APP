@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <div class="wrapper hover_collapse">
+
+        <div class="top_navbar">
+            <!-- logo -->
+            <div class="logo">Voting</div>
+            <!-- menu button -->
+            <div class="menu">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar_inner">
+                <ul>
+                    <li>
+                        <a>
+                            <span class="icon"><i class="fa fa-qrcode"></i></span>
+                            <span onclick="prof()" class="text">Profile</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a>
+                            <span class="icon"><i class="fa fa-link"></i></span>
+                            <span onclick="instru()" class="text">Instructions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="icon"><i class="fa fa-eye"></i></span>
+                            <span onclick="cand()" class="text">Candidates</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="icon"><i class="fa fa-book"></i></span>
+                            <span onclick="votin()" class="text">Vote</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa fa-question-circle"></i></span>
+                            <span class="text">Results</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa fa-pen"></i></span>
+                            <span class="text">Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa fa-id-card"></i></span>
+                            <span class="text">About</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="parag">
+        <p id="para"></p>
+        <p id="profilee">Name: <br> Aadhar No: <br> Phone: <br> voting status: <br> </p>
+        <p id="instrus">1.Only 1 vote per Candidate <br> 2.Enter 1 valid Aadhar number</p>
+        <p id="candi"> <br> 1.BJP<img id="bjp" onclick="document.getElementById('para').innerHTML = ('successfully voted')" height="50px" src="bjp.png" alt=""> <br> 2.Congress <img height="50px"
+                src="congress.png" onclick="document.getElementById('para').innerHTML = ('successfully voted')" alt=""></p>
+        <p id="voti">
+        <form id="foee">
+            <label>Aadhar No</label>
+            <input type="number" placeholder="" /><br>
+            <label>Account id</label>
+            <input type="text" placeholder="" />
+            <br>
+            
+            <input
+                onclick=" document.getElementById('para').innerHTML = ('select candidate') + document.getElementById('candi').innerHTML;"
+                type="button" value="Submit" />
+            
+            </a>
+        </form>
+        </p>
+    </div>
+
+
+    <script>
+        function instru() {
+
+            document.getElementById('para').innerHTML = document.getElementById('instrus').innerHTML;
+        }
+
+        function prof() {
+            document.getElementById('para').innerHTML = document.getElementById('profilee').innerHTML;
+        }
+
+        function cand() {
+            document.getElementById('para').innerHTML = document.getElementById('candi').innerHTML;
+        }
+
+        function votin() {
+            document.getElementById('para').innerHTML = document.getElementById('foee').innerHTML;
+        }
+
+
+    </script>
+</body>
+
+</html>

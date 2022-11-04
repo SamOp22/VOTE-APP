@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <div class="wrapper hover_collapse">
+
+        <div class="top_navbar">
+            <!-- logo -->
+            <div class="logo">Voting</div>
+            <div class="logo">Admin</div>
+            <!-- menu button -->
+            <div class="menu">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar_inner">
+                <ul>
+                    <li>
+                        <a>
+                            <span class="icon"><i class="fa fa-eye"></i></span>
+                            <span onclick="cand()" class="text">Candidates</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa fa-id-card"></i></span>
+                            <span class="text">About</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="party-box">
+        <h1>Add party</h1>
+        <form action="/addparty" method="post">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="" />
+          <label>description</label>
+          <input type="text" name="description" placeholder="" />
+          <button type="submit">Add</button>
+        </form>
+
+      </div>
+    
+</body>
+
+</html>
