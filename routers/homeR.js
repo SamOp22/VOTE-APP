@@ -127,17 +127,27 @@ Router.post('/addparty', (req, res) => {
         .catch((error) => {
             res.send(error);
         })
-}
-
-
-)
-
+})
 
 Router.get('/votercandidatelist', (req, res) => {
     partySchema.find({}, function (err,parties) {
         res.render('votercandidatelist',{
             partiesList: parties 
         })
+    })
+})
+
+Router.get('/deleteparty',(req,res)=>{
+    const {
+        name,
+        desciption
+    } = req.body;
+    partySchema.findOneAndDelete({name:name})
+    .then((sav) => {
+        if (!sav) {
+            return res.send("invalid");
+        }
+        return res.render('admin.ejs');
     })
 })
 
